@@ -3,8 +3,8 @@
     package="com.apps.kreativeco.kreativecocar" >
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Controller"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,10 @@
             android:name=".KCO_AccelometerStream"
             android:label="@string/title_activity_kco__accelometer_stream" >
         </activity>
+        <!--<activity
+            android:name=".Controller"
+            android:label="@string/title_activity_controller" >
+        </activity>-->
     </application>
 
 </manifest>
