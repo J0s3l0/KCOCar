@@ -24,6 +24,8 @@ public class Controller extends ActionBarActivity {
     TextView textResponse;
     EditText editTextAddress, editTextPort;
     Button buttonConnect, buttonClear;
+    WifiManager wm;
+    String ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,22 @@ public class Controller extends ActionBarActivity {
             }
         });
 
-        WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        wm = (WifiManager) getSystemService(WIFI_SERVICE);
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        editTextAddress.setText(ip);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        wm = (WifiManager) getSystemService(WIFI_SERVICE);
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        editTextAddress.setText(ip);
+    }
+
+    protected void onResume() {
+        super.onResume();
+        wm = (WifiManager) getSystemService(WIFI_SERVICE);
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         editTextAddress.setText(ip);
     }
 

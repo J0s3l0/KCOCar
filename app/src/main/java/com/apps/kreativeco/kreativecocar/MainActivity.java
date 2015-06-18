@@ -27,6 +27,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     String msgToServer;
     String msgFromServer;
     String texto="";
+    String ip;
+    WifiManager wm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +58,22 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         //SpecialView myView = new SpecialView(context);
         //setContentView(myView);
 
-        WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        wm = (WifiManager) getSystemService(WIFI_SERVICE);
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         inp_idA.setText(ip);
 
     }
 
     protected void onPause() {
         super.onPause();
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        inp_idA.setText(ip);
     }
 
     protected void onResume() {
         super.onResume();
+        ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        inp_idA.setText(ip);
     }
 
     @Override
