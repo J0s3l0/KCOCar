@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/avanza"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Avanza"
+        android:layout_above="@+id/centro"
+        android:layout_alignLeft="@+id/centro"
+        android:layout_alignStart="@+id/centro" />
+
+    <Button
+        android:id="@+id/centro"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Centro"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/izq"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="   Izq    "
+        android:layout_below="@+id/avanza"
+        android:layout_toLeftOf="@+id/avanza"
+        android:layout_toStartOf="@+id/avanza" />
+
+    <Button
+        android:id="@+id/der"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="   Der   "
+        android:layout_above="@+id/atras"
+        android:layout_toRightOf="@+id/centro"
+        android:layout_toEndOf="@+id/centro" />
+
+    <Button
+        android:id="@+id/atras"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Atras"
+        android:layout_below="@+id/centro"
+        android:layout_alignLeft="@+id/centro"
+        android:layout_alignStart="@+id/centro" />
+
+    <TextView
+        android:id="@+id/xCoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/yCoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/xCoor"/>
+
+    <TextView
+        android:id="@+id/zCoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/yCoor"
+        android:text="TextView" />
+<!--
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/der"
+        android:layout_alignEnd="@+id/der" />
+-->
+
+</RelativeLayout>
